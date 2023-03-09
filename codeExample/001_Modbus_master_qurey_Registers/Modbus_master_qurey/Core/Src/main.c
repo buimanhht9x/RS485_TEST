@@ -63,10 +63,10 @@ uint16_t Data[10];
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	Data[0] = RxData[3]<<8 | RxData[4];
-	Data[1] = RxData[5]<<8 | RxData[6];
-	Data[2] = RxData[7]<<8 | RxData[8];
-	Data[3] = RxData[9]<<8 | RxData[10];
+//	Data[0] = RxData[3]<<8 | RxData[4];
+//	Data[1] = RxData[5]<<8 | RxData[6];
+//	Data[2] = RxData[7]<<8 | RxData[8];
+//	Data[3] = RxData[9]<<8 | RxData[10];
 //	Data[4] = RxData[11]<<8 | RxData[12];
 }
 
@@ -113,8 +113,8 @@ int main(void)
   HAL_UARTEx_ReceiveToIdle_IT(&huart1, RxData, 32);
 
   TxData[0] = 0x05;  // slave address
-//  TxData[1] = 0x03;  // Function code for Read Holding Registers
-  TxData[1] = 0x04;  // Function code for Read Input Registers
+  TxData[1] = 0x03;  // Function code for Read Holding Registers
+ // TxData[1] = 0x04;  // Function code for Read Input Registers
 
   /*
    * The function code 0x03 means we are reading Holding Registers
@@ -123,12 +123,12 @@ int main(void)
    * Here 0 corresponds to the Address 40001 and 9999 corresponds to 50000
    * Although we can only read 125 registers sequentially at once
    */
-//  TxData[2] = 0;
-//  TxData[3] = 0x04;
+  TxData[2] = 0;
+  TxData[3] = 0x04;
 //  //The Register address will be 00000000 00000100 = 4 + 40001 = 40005
 
-  TxData[2] = 0;
-  TxData[3] = 0x01;
+//  TxData[2] = 0;
+//  TxData[3] = 0x01;
   //The Register address will be 00000000 00000001 = 1 +30001 = 30002
 
   TxData[4] = 0;
