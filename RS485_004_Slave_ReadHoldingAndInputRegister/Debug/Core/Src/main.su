@@ -1,0 +1,10 @@
+../Core/Src/main.c:106:6:sendData	24	static
+../Core/Src/main.c:130:6:HAL_UARTEx_RxEventCallback	24	static
+../Core/Src/main.c:157:6:exceptionCodeResponse	16	static
+../Core/Src/main.c:171:9:funcReadHoldingRegister	24	static
+../Core/Src/main.c:213:9:funcReadInputRegister	32	static
+../Core/Src/main.c:259:5:main	8	static
+../Core/Src/main.c:305:6:SystemClock_Config	72	static
+../Core/Src/main.c:345:13:MX_USART1_UART_Init	8	static
+../Core/Src/main.c:378:13:MX_GPIO_Init	32	static
+../Core/Src/main.c:406:6:Error_Handler	4	static,ignoring_inline_asm
